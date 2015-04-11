@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Nanoha History" />
+        <meta name="author" content="MizunagiKB" />
+
+        <title id="id_title">nano History</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+        <!-- Optional theme -->
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style>
+            #id_tpl_foot {
+                height: 60px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="page-header">
+                <h1>魔法少女リリカルなのは <small>Series Timeline</small></h1>
+            </div>
+
+            <svg id="main_surface"></svg>
+
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab_media" aria-controls="home" role="tab" data-toggle="tab">Media</a></li>
+                    <li role="presentation"><a href="#tab_series_N" aria-controls="profile" role="tab" data-toggle="tab">N</a></li>
+                    <li role="presentation"><a href="#tab_series_NAS" aria-controls="profile" role="tab" data-toggle="tab">N.A's</a></li>
+                    <li role="presentation"><a href="#tab_series_NSTS" aria-controls="profile" role="tab" data-toggle="tab">N.StrikerS</a></li>
+                    <li role="presentation"><a href="#tab_series_NVIVID" aria-controls="profile" role="tab" data-toggle="tab">N.Vivid</a></li>
+                    <li role="presentation"><a href="#tab_series_NFORCE" aria-controls="profile" role="tab" data-toggle="tab">N.Force</a></li>
+                    <li role="presentation"><a href="#tab_series_NIN" aria-controls="profile" role="tab" data-toggle="tab">N.Innocent</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane fade in active" id="tab_media">
+                        <h4>魔法少女リリカルなのは メディア一覧</h4>
+
+                        <ol id="id_filter" class="breadcrumb">
+                        </ol>
+
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>タイトル / メディア / 説明</th></tr>
+                            </thead>
+                            <tbody id="id_media">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_N">
+                        <h4>魔法少女リリカルなのは <span class="badge">13 + 3</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_N">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_NAS">
+                        <h4>魔法少女リリカルなのは A's <span class="badge">13 + 3</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_NAS">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_NSTS">
+                        <h4>魔法少女リリカルなのは StrikerS <span class="badge">26 + 4</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_NSTS">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_NVIVID">
+                        <h4>魔法少女リリカルなのは Vivid <span class="badge">2</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_NVIVID">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_NFORCE">
+                        <h4>魔法戦記リリカルなのは Force <span class="badge">-</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_NFORCE">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="tab_series_NIN">
+                        <h4>魔法少女リリカルなのは INNOCENT <span class="badge">-</span></h4>
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <tr><th>#</th><th>サブタイトル / メディア</th></tr>
+                            </thead>
+                            <tbody id="id_series_NIN">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="id_tpl_foot">
+            <div class="container">
+                <p class="text-right">Programming and Design&nbsp;<a href="https://twitter.com/MizunagiKB">@MizunagiKB</a></p>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            // ---------------------------------------------------- Global Object(s)
+            var GLOBAL = new Object();
+            var SCREEN_W = 960;
+            var SCREEN_H = 260;
+            var PADDING = 12;
+            var DELAY_SPEED = 3000;
+
+            // 新暦元年は西暦1941年として計算
+            var BASE_YEAR = 1940;
+            var HISTORY_RANGE = 100;
+            var HISTORY_BLOCK = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+            // History Length
+            var HISTORY_MONTH_SIZE = (4 * 12);
+            var HISTORY_SCROLL_LIMIT = ((HISTORY_MONTH_SIZE * HISTORY_RANGE) - (HISTORY_MONTH_SIZE * 2)) - (SCREEN_W - (PADDING * 2));
+
+            var MEDIA_LIST = [
+                {"group": "N", "name": "魔法少女リリカルなのは", "collection": "テレビアニメーション・全13話", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+                {"group": "N", "name": "魔法少女リリカルなのは", "collection": "書籍・全1巻", "product": "都築 真紀", "media": [{"type": "Book"}]},
+                {"group": "N", "name": "魔法少女リリカルなのは サウンドステージ", "collection": "CD・全3巻", "product": "キングレコード", "media": [{"type": "CD"}]},
+                {"group": "N", "name": "魔法少女リリカルなのは The MOVIE 1st", "collection": "映画", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+                {"group": "N", "name": "魔法少女リリカルなのは MOVIE 1st THE COMICS", "collection": "書籍・全2巻", "product": "長谷川 光司", "media": [{"type": "CD"}]},
+                {"group": "N", "name": "ORIGINAL CHRONICLE 魔法少女リリカルなのは The 1st", "collection": "書籍・3巻", "product": "緋賀 ゆかり", "media": [{"type": "Book"}, {"type": "E Book"}]},
+
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's", "collection": "テレビアニメーション・全13話", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's THE COMICS", "collection": "書籍・全1巻", "product": "長谷川 光司", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's サウンドステージ", "collection": "CD・全3巻", "product": "キングレコード", "media": [{"type": "CD"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは The MOVIE 2nd A's", "collection": "映画", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's", "collection": "テレビアニメーション・全13話", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's PORTABLE - THE BATTLE OF ACES -", "collection": "ゲームソフト・PlayStation Portable", "product": "バンダイナムコゲームス / ウィッチクラフト", "media": [{"type": "UMD"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは A's PORTABLE - THE GEARS OF DESTINY -", "collection": "ゲームソフト・PlayStation Portable", "product": "バンダイナムコゲームス / ウィッチクラフト", "media": [{"type": "UMD"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは GOD サウンドステージ M 「エルトリアの空の下から」", "collection": "CD・全1巻（非売品）", "product": "メガミマガジン2012年8月号付録", "media": [{"type": "CD"}]},
+                {"group": "NAS", "name": "魔法少女リリカルなのは GOD サウンドステージ A 「ミッドチルダの夜空の下」", "collection": "CD・全1巻（非売品）", "product": "アニメディア2012年8月号付録", "media": [{"type": "CD"}]},
+
+                {"group": "NSTS", "name": "魔法少女リリカルなのは StrikerS", "collection": "テレビアニメーション・全26話", "product": "セブン・アークス", "media": [{"type": "DVD"}, {"type": "Blu-ray"}]},
+                {"group": "NSTS", "name": "魔法少女リリカルなのは StrikerS サウンドステージ", "collection": "CD・全4巻", "product": "キングレコード", "media": [{"type": "CD"}]},
+                {"group": "NSTS", "name": "魔法少女リリカルなのは StrikerS THE COMICS", "collection": "書籍・全2巻", "product": "長谷川 光司", "media": [{"type": "Book"}]},
+
+                {"group": "NVIVID", "name": "魔法少女リリカルなのは Vivid", "collection": "テレビアニメーション 1話", "product": "A-1 Pictures", "media": []},
+                {"group": "NVIVID", "name": "魔法少女リリカルなのは Vivid", "collection": "書籍・13巻", "product": "藤真 拓哉", "media": [{"type": "Book"}, {"type": "E Book"}]},
+
+                {"group": "NFORCE", "name": "魔法戦記リリカルなのは Force", "collection": "書籍・6巻", "product": "緋賀 ゆかり", "media": [{"type": "Book"}, {"type": "E Book"}]},
+
+                {"group": "NIN", "name": "魔法少女リリカルなのは INNOCENT", "collection": "Mobage", "product": "セブン・アークス / ユビキタスエンターテインメント", "media": []},
+                {"group": "NIN", "name": "魔法少女リリカルなのは INNOCENT", "collection": "書籍・全3巻", "product": "川上 修一", "media": [{"type": "Book"}, {"type": "E Book"}]},
+                {"group": "NIN", "name": "魔法少女リリカルなのは INNOCENTS", "collection": "書籍・1巻", "product": "川上 修一", "media": [{"type": "Book"}, {"type": "E Book"}]}
+            ];
+
+            var SERIES_LIST = {
+                "N": [
+                    {"episode": "1", "subtitle": "それは不思議な出会いなの？", "media": "テレビアニメーション"},
+                    {"episode": "2", "subtitle": "魔法の呪文はリリカルなの？", "media": "テレビアニメーション"},
+                    {"episode": "2.5", "subtitle": "ドキ！水着でプールで大ピンチなの？", "media": "サウンドステージ 01"},
+                    {"episode": "3", "subtitle": "街は危険がいっぱいなの？", "media": "テレビアニメーション"},
+                    {"episode": "4", "subtitle": "ライバル！？もうひとりの魔法少女なの！", "media": "テレビアニメーション"},
+                    {"episode": "5", "subtitle": "ここは湯のまち、海鳴温泉なの", "media": "テレビアニメーション"},
+                    {"episode": "5.5", "subtitle": "風の向こうの記憶なの", "media": "サウンドステージ 02"},
+                    {"episode": "6", "subtitle": "わかりあえない気持ちなの？", "media": "テレビアニメーション"},
+                    {"episode": "7", "subtitle": "三人目の魔法使いなの！？", "media": "テレビアニメーション"},
+                    {"episode": "8", "subtitle": "それは大いなる危機なの？", "media": "テレビアニメーション"},
+                    {"episode": "9", "subtitle": "決戦は海の上でなの", "media": "テレビアニメーション"},
+                    {"episode": "10", "subtitle": "それぞれの胸の誓いなの", "media": "テレビアニメーション"},
+                    {"episode": "11", "subtitle": "思い出は時の彼方なの", "media": "テレビアニメーション"},
+                    {"episode": "12", "subtitle": "宿命が閉じるときなの", "media": "テレビアニメーション"},
+                    {"episode": "13", "subtitle": "なまえをよんで", "media": "テレビアニメーション"},
+                    {"episode": "14", "subtitle": "それから", "media": "サウンドステージ 03"}
+                ],
+                "NAS": [
+                    {"episode": "1", "subtitle": "はじまりは突然になの", "media": "テレビアニメーション"},
+                    {"episode": "2", "subtitle": "戦いの嵐、ふたたびなの", "media": "テレビアニメーション"},
+                    {"episode": "3", "subtitle": "再会、そしてお引っ越しなの！", "media": "テレビアニメーション"},
+                    {"episode": "3.5", "subtitle": "ドキドキ！お風呂場は熱き戦場なの！", "media": "サウンドステージ 01"},
+                    {"episode": "4", "subtitle": "新たなる力、起動なの！", "media": "テレビアニメーション"},
+                    {"episode": "5", "subtitle": "それは小さな願いなの（前編）", "media": "テレビアニメーション"},
+                    {"episode": "6", "subtitle": "それは小さな願いなの（後編）", "media": "テレビアニメーション"},
+                    {"episode": "6.5", "subtitle": "今は遠き夜天の光", "media": "サウンドステージ 02"},
+                    {"episode": "7", "subtitle": "壊れた過去と現在となの", "media": "テレビアニメーション"},
+                    {"episode": "8", "subtitle": "悲しい決意、勇気の選択なの", "media": "テレビアニメーション"},
+                    {"episode": "9", "subtitle": "クリスマス・イブ", "media": "テレビアニメーション"},
+                    {"episode": "10", "subtitle": "運命", "media": "テレビアニメーション"},
+                    {"episode": "11", "subtitle": "聖夜の贈り物", "media": "テレビアニメーション"},
+                    {"episode": "12", "subtitle": "夜の終わり、旅の終わり", "media": "テレビアニメーション"},
+                    {"episode": "13", "subtitle": "スタンバイ・レディ", "media": "テレビアニメーション"},
+                    {"episode": "14", "subtitle": "これから", "media": "サウンドステージ 03"}
+                ],
+                "NSTS": [
+                    {"episode": "1", "subtitle": "空への翼", "media": "テレビアニメーション"},
+                    {"episode": "2", "subtitle": "機動六課", "media": "テレビアニメーション"},
+                    {"episode": "3", "subtitle": "集結", "media": "テレビアニメーション"},
+                    {"episode": "4", "subtitle": "ファースト・アラート", "media": "テレビアニメーション"},
+                    {"episode": "5", "subtitle": "星と雷", "media": "テレビアニメーション"},
+                    {"episode": "6", "subtitle": "進展", "media": "テレビアニメーション"},
+                    {"episode": "6.5", "subtitle": "出張・機動六課！！？ 緊急捜索任務 in 海鳴市？", "media": "サウンドステージ 01"},
+                    {"episode": "7", "subtitle": "ホテル・アグスタ", "media": "テレビアニメーション"},
+                    {"episode": "8", "subtitle": "願い、ふたりで", "media": "テレビアニメーション"},
+                    {"episode": "9", "subtitle": "たいせつなこと", "media": "テレビアニメーション"},
+                    {"episode": "10", "subtitle": "機動六課のある休日（前編）", "media": "テレビアニメーション"},
+                    {"episode": "11", "subtitle": "機動六課のある休日（後編）", "media": "テレビアニメーション"},
+                    {"episode": "12", "subtitle": "ナンバーズ", "media": "テレビアニメーション"},
+                    {"episode": "13", "subtitle": "命の理由", "media": "テレビアニメーション"},
+                    {"episode": "14", "subtitle": "SISTERS & DAUGHTERS", "media": "テレビアニメーション"},
+                    {"episode": "14.5", "subtitle": "機動六課 家族の肖像", "media": "サウンドステージ 02"},
+                    {"episode": "15", "subtitle": "MOTHERS & CHILDREN", "media": "テレビアニメーション"},
+                    {"episode": "16", "subtitle": "その日、機動六課（前編）", "media": "テレビアニメーション"},
+                    {"episode": "17", "subtitle": "その日、機動六課（後編）", "media": "テレビアニメーション"},
+                    {"episode": "18", "subtitle": "翼、ふたたび", "media": "テレビアニメーション"},
+                    {"episode": "18.5", "subtitle": "蒼天の風、宵闇の炎", "media": "サウンドステージ 03"},
+                    {"episode": "19", "subtitle": "ゆりかご", "media": "テレビアニメーション"},
+                    {"episode": "20", "subtitle": "無限の欲望", "media": "テレビアニメーション"},
+                    {"episode": "21", "subtitle": "決戦", "media": "テレビアニメーション"},
+                    {"episode": "22", "subtitle": "PAIN TO PAIN", "media": "テレビアニメーション"},
+                    {"episode": "23", "subtitle": "STARS STRIKE", "media": "テレビアニメーション"},
+                    {"episode": "24", "subtitle": "雷光", "media": "テレビアニメーション"},
+                    {"episode": "25", "subtitle": "ファイナル・リミット", "media": "テレビアニメーション"},
+                    {"episode": "26", "subtitle": "約束の空へ", "media": "テレビアニメーション"},
+                    {"episode": "27", "subtitle": "青空", "media": "サウンドステージ 04"}
+                ],
+
+                "NVIVID": [
+                    {"episode": "1", "subtitle": "セイクリッド・ハート", "media": "テレビアニメーション"},
+                    {"episode": "2", "subtitle": "アインハルト・ストラトス", "media": "テレビアニメーション"}
+                ]
+            };
+
+
+            // =====================================================================
+            /*!
+             */
+            function render_table(strGroup)
+            {
+                var filter_list = [];
+            
+                function cmp_group(d)
+                {
+                    if(strGroup == "*")
+                    {
+                        return(true);
+                    } else {
+                        return(d.group == strGroup);
+                    }
+                };
+
+                $("#id_media").html(
+                    GLOBAL.TPL_MEDIA_LIST.render(
+                        {"media_list": MEDIA_LIST.filter(cmp_group)}
+                    )
+                );
+
+                $("#id_series_N").html(
+                    GLOBAL.TPL_SERIES_LIST.render(
+                        {"series_list": SERIES_LIST["N"]}
+                    )
+                );
+
+                $("#id_series_NAS").html(
+                    GLOBAL.TPL_SERIES_LIST.render(
+                        {"series_list": SERIES_LIST["NAS"]}
+                    )
+                );
+
+                $("#id_series_NSTS").html(
+                    GLOBAL.TPL_SERIES_LIST.render(
+                        {"series_list": SERIES_LIST["NSTS"]}
+                    )
+                );
+
+                $("#id_series_NVIVID").html(
+                    GLOBAL.TPL_SERIES_LIST.render(
+                        {"series_list": SERIES_LIST["NVIVID"]}
+                    )
+                );
+
+                if(strGroup == "*")
+                {
+                } else {
+                    filter_list = [{"filter_item": strGroup}];
+                }
+
+                $("#id_filter").html(
+                    GLOBAL.TPL_FILTER.render(
+                        {"filter_list": filter_list}
+                    )
+                );
+            }
+
+
+            // =====================================================================
+            /*!
+             */
+            function render_history_desc(g, nIndex)
+            {
+                var nYearBe = 1;
+                var nYearEn = 9;
+
+                if(nIndex > 0)
+                {
+                    nYearBe = HISTORY_BLOCK[nIndex];
+                    nYearEn = HISTORY_BLOCK[nIndex] + 9;
+                }
+
+                listData = [
+                    ""
+                    + "NC" + nYearBe + " - " + nYearEn
+                    + " ("
+                    + "AD" + (nYearBe + BASE_YEAR) + " - " + (nYearEn + BASE_YEAR)
+                    + ")"
+                ];
+
+                o = g.selectAll("text")
+                    .data(listData, function(d){return(d);})
+                    ;
+
+                o.enter()
+                    .append("text")
+                    .text(function(d){return(d);})
+                    .attr("font-family", "Oswald")
+                    .attr("font-size", "24px")
+                    .attr("fill", "rgb(0, 0, 0)")
+                    .attr("fill-opacity", 0)
+                    .attr("text-anchor", "start")
+                    .attr("x", 12)
+                    .attr(
+                        "y",
+                        function(d)
+                        {
+                            return(SCREEN_H - 46);
+                        }
+                    )
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(1000)
+                        .attr("fill-opacity", 1)
+                        .attr("text-anchor", "start")
+
+                ;
+                o.exit()
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(1000)
+                    .attr("font-size", "24px")
+                    .attr("fill-opacity", 0)
+                    .remove()
+                    ;
+            }
+
+
+            // =====================================================================
+            /*!
+             */
+            function render_data_desc(gText, strText)
+            {
+                gText
+                    .text(strText)
+                    .attr("font-family", "Impact")
+                    .attr("font-size", "14px")
+                    .attr("fill", "rgb(0, 0, 0)")
+                    .attr("fill-opacity", 0)
+                    .attr("text-anchor", "start")
+                    .attr("x", 12)
+                    .attr(
+                        "y",
+                        function(d)
+                        {
+                            return(SCREEN_H - 18);
+                        }
+                    )
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(2000)
+                        .attr("fill-opacity", 1)
+                        .attr("text-anchor", "start")
+            }
+
+
+            // =====================================================================
+            /*!
+             */
+            function render_data(g, gText, listData, nY, nH, nIndex)
+            {
+                var x = (HISTORY_SCROLL_LIMIT * nIndex) / (HISTORY_BLOCK.length - 1);
+
+                var func_pos_x = function(d)
+                    {
+                        return(PADDING + (GLOBAL.nano_xScale(d.date_be) - x));
+                    };
+
+                var func_width = function(d)
+                    {
+                        return(GLOBAL.nano_xScale(d.date_en) - GLOBAL.nano_xScale(d.date_be));
+                    }
+
+                o = g.selectAll("rect")
+                    .data(listData)
+                    ;
+
+                o
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(DELAY_SPEED)
+                    .attr("x", func_pos_x)
+                    .attr("width", func_width)
+                    ;
+
+                o.enter()
+                    .append("rect")
+                    .attr("x", func_pos_x)
+                    .attr("y", nY)
+                    .attr("rx", 1)
+                    .attr("ry", 1)
+                    .attr("width", func_width)
+                    .attr("height", nH)
+                    .attr("stroke-width", 0)
+                    .attr("stroke", d3.rgb(255, 255, 255))
+                    .attr("fill", function(d){return(d.color);})
+                    .attr("fill-opacity", 0.75)
+                    .on("click",
+                        function(d)
+                        {
+                            if(d.type == "series")
+                            {
+                                render_table(d.group);
+                            }
+                        }
+                    )
+                    .on("mouseover",
+                        function(d)
+                        {
+                            render_data_desc(gText, d.text);
+                        }
+                    )
+                    ;
+
+                o.exit()
+                    .remove()
+                    ;
+            }
+
+
+            // =====================================================================
+            /*!
+             */
+            function render_timeline(g, nIndex, listData)
+            {
+                var x = (HISTORY_SCROLL_LIMIT * nIndex) / (HISTORY_BLOCK.length - 1);
+
+                var func_pos_x = function(d)
+                    {
+                        return(PADDING + (GLOBAL.nano_xScale(d.date_be) - x));
+                    };
+
+                var func_width = function(d)
+                    {
+                        return(GLOBAL.nano_xScale(d.date_en) - GLOBAL.nano_xScale(d.date_be));
+                    }
+
+                o = g.selectAll("rect")
+                    .data(listData)
+                    ;
+
+                o
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(DELAY_SPEED)
+                    .attr("x", func_pos_x)
+                    .attr("width", func_width)
+                    .attr(
+                        "fill",
+                        function(d)
+                        {
+                            var nBe = HISTORY_BLOCK[nIndex];
+                            var nEn = 0;
+                            var d3Color = d3.rgb(81, 88, 93);
+
+                            if(nIndex == 0)
+                            {
+                                nEn = nBe + 8;
+                            } else {
+                                nEn = nBe + 9;
+                            }
+
+                            if(d.nano_year >= nBe && d.nano_year <= nEn)
+                            {
+                                d3Color = d3Color.brighter(2);
+                            }
+
+                            return(d3Color);
+                        }
+                    )
+
+                    ;
+
+                o.enter()
+                    .append("rect")
+                    .attr("x", func_pos_x)
+                    .attr("y", 72)
+                    .attr("width", func_width)
+                    .attr("height", 24)
+                    .attr("stroke-width", 2)
+                    .attr("stroke", d3.rgb(255, 255, 255))
+                    .attr("fill", d3.rgb(81, 88, 93))
+                    .on("click",
+                        function(d)
+                        {
+                            /*
+                            console.log(d.date_be);
+                            console.log(d.date_en);
+                            console.log(
+                                ">>> " + (GLOBAL.nano_xScale(d.date_en) - GLOBAL.nano_xScale(d.date_be))
+                            );
+                             */
+                        }
+                    )
+                    ;
+
+                o.exit()
+                    .remove()
+                    ;
+
+                o = g.selectAll("text")
+                    .data(listData)
+                    ;
+
+                o
+                    .transition()
+                    .ease("cubic-out")
+                    .duration(DELAY_SPEED)
+                    .attr("x", func_pos_x)
+                ;
+                o.enter()
+                    .append("text")
+                    .text(function(d, i){return(i + 1);})
+                    .attr("font-family", "Oswald")
+                    .attr("font-size", "11px")
+                    .attr("fill", "rgb(0, 0, 0)")
+                    .attr("text-anchor", "middle")
+                    .attr("x", func_pos_x)
+                    .attr(
+                        "y",
+                        function(d)
+                        {
+                            return(70);
+                        }
+                    )
+                ;
+                o.exit()
+                    .remove()
+                    ;
+            }
+
+
+            // ===============================================================
+            /*!
+             */
+            function main(listTimeline, listSeries, listEvent)
+            {
+                var svg = d3.select("#main_surface");
+
+                svg.attr("width", "100%");
+                svg.attr("height", SCREEN_H);
+                svg.append("clipPath")
+                    .attr("id", "clipping-region")
+                    .append("rect")
+                    .attr("x", PADDING)
+                    .attr("y", PADDING)
+                    .attr("width", SCREEN_W - (PADDING * 2))
+                    .attr("height", SCREEN_H - (PADDING * 2))
+                    ;
+
+                var gChrono = svg.append("g");
+                var gChronoD = svg.append("g");
+                var gChronoT = svg.append("g");
+                var gChronoS = svg.append("g");
+                var gChronoE = svg.append("g");
+
+                gText = gChronoT.append("text");
+
+                nYearMin = d3.min(HISTORY_BLOCK);
+                nYearMax = d3.max(HISTORY_BLOCK);
+
+                var xScale = d3.scale.ordinal()
+                    .domain(HISTORY_BLOCK)
+                    .rangeBands([PADDING, SCREEN_W - PADDING], 0, 0)
+                    ;
+
+                o = gChrono.selectAll("rect")
+                    .data(HISTORY_BLOCK)
+                    ;
+
+                o.enter()
+                    .append("rect")
+                    .attr(
+                        "x",
+                        function(d)
+                        {
+                            return(xScale(d));
+                        }
+                    )
+                    .attr("y", 0)
+                    .attr("rx", 6)
+                    .attr("ry", 6)
+                    .attr("width", function(d){return(xScale.rangeBand());})
+                    .attr("height", 48)
+                    .attr("stroke-width", 3)
+                    .attr("stroke", "rgb(255, 255, 255)")
+                    .attr("fill", d3.rgb(55, 123, 181))
+                    .on("click",
+                        function(d, i)
+                        {
+                            render_history_desc(gChronoD, i);
+                            render_timeline(gChronoT, i, listTimeline);
+                            render_data(gChronoS, gText, listSeries, 100, 46, i);
+                            render_data(gChronoE, gText, listEvent,  148, 12, i);
+                        }
+                    )
+                    .on("mouseover", function(d)
+                        {
+                            d3.select(this)
+                                .transition()
+                                .duration(250)
+                                .attr("fill", d3.rgb(55, 123, 181).brighter(1))
+                        }
+                    )
+                    .on("mouseout", function(d)
+                        {
+                            d3.select(this)
+                                .transition()
+                                .duration(250)
+                                .attr("fill", d3.rgb(55, 123, 181).brighter(0))
+                        }
+                    )
+                    ;
+
+                o = gChrono.selectAll("text")
+                    .data(HISTORY_BLOCK)
+                    ;
+
+                o.enter()
+                    .append("text")
+                    .text(
+                        function(d)
+                        {
+                            var strYear = d;
+
+                            if(strYear == 1)
+                            {
+                                strYear = "新暦元年 - 9";
+                            } else {
+                                strYear = d + " - " + (d + 9)
+                            }
+
+                            return(strYear);
+                        }
+                    )
+                    .attr("font-family", "Oswald")
+                    .attr("font-size", "14px")
+                    .attr("fill", d3.rgb(255, 255, 255))
+                    .attr("text-anchor", "middle")
+                    .attr(
+                        "x",
+                        function(d)
+                        {
+                            return(
+                                xScale(d) + (xScale.rangeBand() / 2)
+                            );
+                        }
+                    )
+                    .attr(
+                        "y",
+                        function(d)
+                        {
+                            return(38);
+                        }
+                    )
+                ;
+
+                // Mouse Drag Event
+
+                drag_listener = d3.behavior.drag()
+                    .on("dragstart", function(d){}
+                    )
+                    .on(
+                        "drag",
+                        function(d)
+                        {
+                            //console.log(d3.event.dx);
+                        }
+                    )
+                    .on("dragend", function(d){}
+                    )
+                    ;
+
+                gChrono
+                    .append("rect")
+                    .attr("x", 0)
+                    .attr("y", 102)
+                    .attr("rx", 0)
+                    .attr("ry", 0)
+                    .attr("width", "100%")
+                    .attr("height", 42)
+                    .attr("stroke-width", 0)
+                    .attr("stroke", "rgb(255, 255, 255)")
+                    .attr("fill", d3.rgb(238, 238, 238))
+                    .call(drag_listener)
+                    ;
+
+                gChrono
+                    .append("rect")
+                    .attr("x", 0)
+                    .attr("y", 150)
+                    .attr("rx", 0)
+                    .attr("ry", 0)
+                    .attr("width", "100%")
+                    .attr("height", 8)
+                    .attr("stroke-width", 0)
+                    .attr("stroke", "rgb(255, 255, 255)")
+                    .attr("fill", d3.rgb(238, 238, 238))
+                    ;
+
+                render_timeline(gChronoT, 0, listTimeline);
+                render_data(gChronoS, gText, listSeries, 100, 46, 0);
+                render_data(gChronoE, gText, listEvent,  148, 12, 0);
+
+                render_table("*");
+            }
+
+
+            // =====================================================================
+            /*!
+             */
+            function date_build(listDateBe, listDateEn, d)
+            {
+                var dateBe = null;
+                var dateEn = null;
+
+                if(listDateBe[1] == "*")
+                {
+                    dateBe = new Date(BASE_YEAR + parseInt(listDateBe[0]),  0,  1);
+                    dateEn = new Date(BASE_YEAR + parseInt(listDateEn[0]),  0, 30);
+                } else if(listDateBe[2] == "*") {
+                    dateBe = new Date(BASE_YEAR + parseInt(listDateBe[0]),  parseInt(listDateBe[1]) - 1,   1);
+                    dateEn = new Date(BASE_YEAR + parseInt(listDateEn[0]),  parseInt(listDateEn[1]) - 1,  30);
+                } else {
+                    dateBe = new Date(BASE_YEAR + parseInt(listDateBe[0]),  parseInt(listDateBe[1]) - 1,  parseInt(listDateBe[2]));
+                    dateEn = new Date(BASE_YEAR + parseInt(listDateEn[0]),  parseInt(listDateEn[1]) - 1,  parseInt(listDateEn[2]) + 30);
+                }
+
+                return([dateBe, dateEn]);
+            }
+
+            // =====================================================================
+            /*!
+             */
+            window.onload = function()
+            {
+                GLOBAL.TPL_MEDIA_LIST = Hogan.compile(
+                    ''
+                    + '{{#media_list}}'
+                    + '<tr><td>'
+                    + '<p class="text-left">'
+                    + '{{name}}'
+                    + '{{#media}}'
+                                + '&nbsp;<span class="label label-primary">{{type}}</span>'
+                    + '{{/media}}'
+                    + '</p>'
+                    + '<p class="text-right">{{collection}}<br /><small>{{product}}</small></p>'
+                    + '</td></tr>'
+                    + '{{/media_list}}'
+                );
+
+                GLOBAL.TPL_SERIES_LIST = Hogan.compile(
+                    ''
+                    + '{{#series_list}}'
+                    + '<tr><td>'
+                    + '<p class="text-right">'
+                    + '{{episode}}'
+                    + '</p>'
+                    + '<td>{{subtitle}}&nbsp;<br /><small>{{media}}</small></p></td>'
+                    + '</tr>'
+                    + '{{/series_list}}'
+                );
+
+                GLOBAL.TPL_FILTER = Hogan.compile(
+                    ''
+                    + '<li><a id="id_filter_reset" href="javascript:render_table(\'*\');">Filter Reset</a></li>'
+                    + '{{#filter_list}}'
+                    + '<li class="active" >{{filter_item}}</li>'
+                    + '{{/filter_list}}'
+                );
+
+                GLOBAL.nano_format = d3.time.format("%Y-%m-%d");
+                GLOBAL.nano_xScale = d3.time.scale()
+                    .domain([GLOBAL.nano_format.parse("1941-01-01"), GLOBAL.nano_format.parse("2041-12-31")])
+                    .range([0, (HISTORY_MONTH_SIZE * HISTORY_RANGE)])
+                    ;
+
+                d3.csv("./nano_history.csv")
+                    .row(
+                        function(d)
+                        {
+                            var listDate = date_build(d.date_be.split("-"), d.date_en.split("-"), d);
+                            var dateResult = {
+                                date_be: listDate[0],
+                                date_en: listDate[1],
+                                group: d.group,
+                                type: d.type,
+                                text: d.text
+                            };
+
+                            return(dateResult);
+                        }
+                    )
+                    .get(
+                        function(err, rows)
+                        {
+                            var listTimeline = [];
+                            var listSeries = [];
+                            var listEvent = [];
+
+                            for(var n = 1; n < 100; n++)
+                            {
+                                listTimeline.push(
+                                    {
+                                        date_be: new Date(BASE_YEAR + n,  0,  1),
+                                        date_en: new Date(BASE_YEAR + n, 11, 31),
+                                        nano_year: n
+                                    }
+                                );
+                            }
+
+                            rows.forEach(
+                                function(d)
+                                {
+                                    if(d.type == "series")
+                                    {
+                                        d.color = d3.rgb(55, 123, 181);
+                                        listSeries.push(d);
+                                    } else if(d.type == "event") {
+                                        d.color = d3.rgb(215, 84, 82);
+                                        listEvent.push(d);
+                                    }
+                                }
+                            );
+
+                            main(listTimeline, listSeries, listEvent);
+                        }
+                    )
+                    ;
+            }
+
+        </script>
+
+        <!-- jQuery-1.11.0 http://jquery.com/ -->
+        <script type="text/javascript" src="jquery/js/jquery-1.11.0.min.js"></script>
+
+        <!-- Bootstrap http://twitter.github.io/bootstrap/index.html -->
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Hogan.js http://twitter.github.io/hogan.js/ -->
+        <script type="text/javascript" src="hogan/js/hogan.min.js"></script>
+
+        <!-- D3.js http://d3js.org -->
+        <script charset="utf-8" src="http://d3js.org/d3.v3.min.js"></script>
+    </body>
+</html>
